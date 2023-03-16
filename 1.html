@@ -1,0 +1,44 @@
+{% set my_variable = "a statement does something" %}
+
+{{ an_expression_evaluates_to_a_value }}
+
+{# Comments are't rendered client side #}
+
+<!-- Satements, expressions, and commensts -->
+
+{% macro add_numbers(n1, n2) %}
+ {{ n1+n2 }}
+{% endmacro %}
+
+{{ add_numbers(4, 5) }}
+
+{# outout: 9 #}
+
+<!-- Creating and calling a macro -->
+
+{% set friends = ['Joe', 'Rachel', 'Doug', 'Winston'] %} 
+
+{% if freinds is iterable %} 
+ <p>My frinds are {{ friends|join(', ') }}</p>
+{% else %} 
+<p>My frind is  {{ frinds }}</p>
+{% endif %} 
+
+{# OUTPUT: My frinds are Joe, Rachel, Doug, Winston #}
+
+<!-- Conditional satemets and expression tests -->
+
+{% set numbers = ['One', 'two', 'three'] %} 
+{% for number in numbers|reverse %}
+ <p>Loop index: {{ loop.index }} Number: {{ number }}</p>
+{% endfor %}
+
+{# OUTPUT: 
+Loop index:1 Number: three
+Loop index:2 Number: two
+Loop index:3 Number: one
+    #}
+
+    <!-- Loops with properties and filters -->
+
+    
